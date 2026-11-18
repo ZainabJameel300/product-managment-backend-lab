@@ -90,10 +90,27 @@ async function deleteProduct(req,res){
     }
 }
 
+async function getLowStockProducts(req,res){
+    try{
+
+        const foundProducts = await Product.find({quantity:{$lt: 3}})
+        
+         if(!foundProducts){
+             return res.status(200).json({message:"No Products Found"})
+         }
+        res.status(200).json(foundProducts)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json({message:'Internal Server Error'})
+    }
+}
+
 module.exports = {
     createProduct,
     getAllProducts,
     getProductbyId,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    getLowStockProducts
 }
