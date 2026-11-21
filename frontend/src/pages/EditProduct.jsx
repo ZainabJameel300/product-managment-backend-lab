@@ -42,7 +42,9 @@ function EditProduct() {
     <div>
         <h1>Edit Product</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
+
+            <div>
             <label htmlFor="title">Title:</label>
             <input 
             type="text" 
@@ -51,9 +53,10 @@ function EditProduct() {
             value={formData.title}
             onChange={handleChange}
             />
-            <br />
-            <br />
+            </div>
 
+
+            <div>
             <label htmlFor="category">Category:</label>
             <input 
             type="text"
@@ -62,9 +65,10 @@ function EditProduct() {
             value={formData.category}
             onChange={handleChange}
              />
-             <br />
-             <br />
+             </div>
 
+
+             <div>
             <label htmlFor="price">Price:</label>
             <input 
             type="number"
@@ -73,9 +77,9 @@ function EditProduct() {
             value={formData.price}
             onChange={handleChange}
              />
-             <br />
-             <br />
+            </div>
 
+            <div>
             <label htmlFor="quantity">Quantity:</label>
             <input 
             type="number"
@@ -84,10 +88,11 @@ function EditProduct() {
             value={formData.quantity}
             onChange={handleChange}
              />
-             <br />
-             <br />
+            </div>
 
+             <div className="button-container">
              <button>Edit Product</button>
+             </div>
         </form>
     </div>
   )
