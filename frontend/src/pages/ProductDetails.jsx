@@ -34,7 +34,7 @@ function ProductDetails() {
         <h1>Product Details</h1>
 
         {product ? <>
-            <p>Title: {product.name}</p>
+            <p>Title: {product.title}</p>
             <p>Category: {product.category}</p>
             <p>Price: {product.price}</p>
             <p>Quantity: {product.quantity}</p>
